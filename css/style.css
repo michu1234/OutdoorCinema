@@ -65,7 +65,7 @@ a:hover {
 }
 footer {
   background: #f4adaa;
-  height: 100px;
+  height: 120px;
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
@@ -73,6 +73,7 @@ footer {
   color: #b9253e;
   font-size: 14px;
   font-weight: 400;
+  padding: 10px;
 }
 /* LAYOUT */
 header {
@@ -136,13 +137,15 @@ header {
 }
 .login-toolbar {
   display: flex;
+  position: relative;
   justify-content: space-between;
 }
 .login-toolbar__logo {
   margin: 0 20px 0 20px;
-  position: relative;
+  position: absolute;
   width: 158px;
   height: 81px;
+  left: 69px;
 }
 .login-toolbar__logo-image {
   position: absolute;
@@ -172,8 +175,9 @@ header {
   margin: auto;
 }
 form {
-  padding: 18px 0;
+  padding: 18px 10px 18px 90px;
   justify-content: space-between;
+  margin-left: auto;
 }
 .main-image {
   position: relative;
@@ -216,6 +220,12 @@ form {
 }
 .badge__item {
   display: inline-block;
+  transition: all .3s;
+}
+.blog__thumbnail:hover,
+.blog__thumbnail2:hover,
+.badge__item:hover {
+  transform: matrix(1.05, 0, 0, 1.05, 0, 0);
 }
 .divider {
   background: #fdcdcb;
@@ -237,6 +247,7 @@ form {
   padding-top: 30px;
 }
 .blog__post {
+  margin: 0 auto;
   position: relative;
   transform: scale(0.95);
 }
@@ -253,11 +264,17 @@ form {
 .blog__thumbnail {
   position: relative;
   padding-bottom: 10px;
-  width: 100%;
+  max-width: 100%;
   height: auto;
+  transition: all .3s;
 }
 .blog__thumbnail2 {
   filter: sepia(190%);
+  position: relative;
+  padding-bottom: 10px;
+  max-width: 100%;
+  height: auto;
+  transition: all .3s;
 }
 .blog__title {
   position: absolute;
@@ -273,10 +290,13 @@ form {
 .ads__list {
   list-style: none;
   margin: 0;
+  padding: 0;
+  text-align: center;
 }
 .ads__item {
   display: inline-block;
   padding-right: 10px;
+  padding-top: 20px;
 }
 .second-divider {
   height: 100px;
@@ -313,6 +333,7 @@ form {
   position: absolute;
   top: 50%;
   left: 50%;
+  line-height: 28px;
   transform: translate(-50%, -50%);
 }
 .gallery {
@@ -375,15 +396,30 @@ form {
 }
 .gallery__carousel {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
+}
+.contain_slider {
+  overflow: hidden;
+  position: relative;
+  width: 85%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
 }
 .gallery__slider {
   padding: 0;
   margin-bottom: 50px;
+  width: 950px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
 }
 .gallery__slide {
   display: inline-block;
+  width: 230px;
+  height: auto;
 }
 .carousel__arrow {
   background: #564b86;
@@ -435,4 +471,37 @@ button {
 }
 .button--purple:hover {
   background-color: #e6173b;
+}
+/* MEDIA */
+@media screen and (max-width: 1316px) {
+  form {
+    display: none;
+  }
+}
+@media screen and (max-width: 880px) {
+  .top-menu__list {
+    display: none;
+  }
+}
+@media screen and (max-width: 512px) {
+  .login-toolbar__logo-event {
+    display: none;
+  }
+  .main-image__title {
+    top: 55%;
+  }
+}
+@media screen and (max-width: 630px) {
+  .main-image__title {
+    font-size: 45px;
+    line-height: 45px;
+    top: 60%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .main-image__title {
+    font-size: 35px;
+    line-height: 35px;
+    top: 50%;
+  }
 }

@@ -1,10 +1,11 @@
 // SLIDER SCRIPT //
 
-var slider = $(".gallery__slider");
-var left_arrow = $(".arrow-left");
-var right_arrow = $(".arrow-right");
-
-
-right_arrow.click(function(){
-	slider.css({marginLeft: "=+200px"});
+$(".arrow-left").click(function(){
+		$(".gallery__slider img:last").after($(".gallery__slider img:first"));
 })
+
+$(".arrow-right").click(function(){
+	$(".gallery__slider img:first").before($(".gallery__slider img:last"));
+})
+
+
